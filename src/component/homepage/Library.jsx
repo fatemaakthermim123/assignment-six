@@ -1,5 +1,6 @@
  import React from 'react';
 import LibraryCard from '../shared/LibraryCard';
+import Link from 'next/link';
  
  const getDate = async () => {
   try{
@@ -18,16 +19,21 @@ import LibraryCard from '../shared/LibraryCard';
  const Library = async() => {
     const libraries=await getDate()
     return (
+        
         <section className='container mx-auto my-20'>
             <h1 className='text-5xl font-extrabold'>THE LIBRARY</h1>
             <p className='text-gray-400 my-3.5 text-xl'>Twelve lifts covering every major muscle group.</p>
        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {libraries.map((library) => {
-          return <LibraryCard key={library.id} library={library} />;
+          return(
+             <Link href={`/Libraries/${library.id}`} key={library.id }>
+            <LibraryCard key={library.id} library={library} />
+            </Link>)
         })}
       </div>
       
       </section>
+    
     );
  };
  
