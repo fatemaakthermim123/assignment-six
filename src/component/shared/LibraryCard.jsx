@@ -7,7 +7,7 @@ import { MdOutlineWatchLater } from 'react-icons/md';
 const LibraryCard = ({library}) => {
     return (
        
-    <div className="rounded-3xl bg-[#263d68] transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+    <div className="rounded-3xl bg-[#111318] transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
 
       {/* Image */}
       <Image

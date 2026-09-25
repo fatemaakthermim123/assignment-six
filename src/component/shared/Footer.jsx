@@ -3,7 +3,7 @@ import logo from '@/assets/logo.png'
 import Image from 'next/image';
 const Footer = () => {
     return (
-       <footer className="bg-gray-900 text-white">
+       <footer className="bg-[#111318] text-white">
   <div className="px-4 sm:px-6 lg:px-8">
     <div className="flex flex-col items-center justify-between gap-6 py-6 sm:flex-row">
 
