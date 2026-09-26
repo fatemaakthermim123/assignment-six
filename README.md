@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# 💪 FitLog
 
-First, run the development server:
+FitLog is a modern, dark-themed gym companion designed to help you stay focused on your fitness goals. Browse exercises, build your daily workout plan, and track your progress — all in one place. No clutter, just workouts.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Technologies Used
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js** – React framework for routing and application structure.
+- **Tailwind CSS** – Utility-first CSS framework for responsive styling.
+- **DaisyUI** – Component library for building clean and consistent UI elements.
+- **React Icons** – Icon library used throughout the application.
+- **React Toastify** – Toast notifications for instant feedback on user actions.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ✨ Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Curated Exercise Library
+Browse a collection of exercises displayed in clean, easy-to-scan cards.
 
-## Learn More
+### 2. One-Click Workout Planning
+Add exercises to your daily workout plan with a single click. The button automatically disables after an exercise is added to prevent duplicates.
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Save & Reuse Plans
+Save your favorite exercises and workout plans so you can easily access and reuse them for future workouts.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Real-Time Feedback
+Get instant toast notifications for actions such as adding exercises, saving plans, and updating your workout library.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 5. Smooth In-Page Navigation
+Navigate directly to the workout library from the homepage banner with smooth scrolling and no page reloads.
