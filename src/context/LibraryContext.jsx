@@ -1,17 +1,29 @@
 "use client"
-import React, { createContext, useState } from 'react';
 
- 
+import { createContext, useState } from "react";
 
   export const LibraryContext=createContext({});
 const LibraryProvider = ({children}) => {
     const [planLibrary,setPlanLibrary]=useState([]);
     const [savedLibrary,setSavedLibrary]=useState([]);
+    const removeFromPlan = (id) => {
+    setPlanLibrary((library) => library.filter((item) => item.id !== id));
+};
+
+    const removeFromSaved = (id) => {
+    setSavedLibrary((library) => library.filter((item) => item.id !== id))
+    ;}
+  
+
     const sharedData={
         planLibrary,
         setPlanLibrary,
         savedLibrary,
-        setSavedLibrary
+        setSavedLibrary,
+        removeFromPlan,
+        removeFromSaved
+        
+        
     }
     return (
       <LibraryContext.Provider value={sharedData}>{children}</LibraryContext.Provider>
@@ -19,22 +31,3 @@ const LibraryProvider = ({children}) => {
 };
 
 export default LibraryProvider;
-
-
-// const BooksProvider = ({ children }: { children: ReactNode }) => {
-//   const [readBooks, setReadBooks] = useState<IBook[]>([]);
-//   const [wishlist, setWishlist] = useState<IBook[]>([]);
-
-//   const sharedData = {
-//     readBooks,
-//     setReadBooks,
-//     wishlist,
-//     setWishlist,
-//   };
-
-//   return (
-//     <BooksContext.Provider value={sharedData}>{children}</BooksContext.Provider>
-//   );
-// };
-
-// export default BooksProvider;
