@@ -6,12 +6,11 @@ import { useContext } from "react";
 import { toast } from "react-toastify";
 
 const SavedLibrary = ({library}) => {
-   const { savedLibrary, setSavedLibrary} = useContext(LibraryContext);
+   const { savedLibrary, setSavedLibrary,selectedExercisesTwo, setSelectedExercisesTwo} = useContext(LibraryContext);
 
   const handleSavedLibrary = () => {
-    console.log("read book btn triggered", library);
 
-    // setReadBooks((prevReadBooks) => [...prevReadBooks, book]);
+    setSelectedExercisesTwo([...selectedExercisesTwo,library])
     setSavedLibrary([...savedLibrary, library]);
     toast.success(` "${library.name} is added to Saved"`);
   };

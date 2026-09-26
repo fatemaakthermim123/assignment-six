@@ -1,15 +1,19 @@
 "use client"
 import MyPlanCard from '@/component/homepage/MyPlanCard';
 import MySavedCard from '@/component/homepage/MySavedCard';
+import PlanExcercise from '@/component/homepage/PlanExcercise';
+import SavedExcercise from '@/component/homepage/SavedExcercise';
 import LibraryCard from '@/component/shared/LibraryCard';
 import { LibraryContext } from '@/context/LibraryContext';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 const MyPlanPage = () => {
 const{planLibrary,savedLibrary}=useContext(LibraryContext);
 const {visible,setVisible}=useContext(LibraryContext);
-console.log(planLibrary)
+const [activeTab, setActiveTab]=useState("plan");
+
+
     return (
         <div className='container mx-auto my-20'>
         <div className='gird grid-cols-1'>
@@ -18,13 +22,13 @@ console.log(planLibrary)
                 Cap of five lifts for today. Finish them, then load more.</p>
 
 
-
-
-
-
-                {/* name of each tab group should be unique */}
+           {activeTab === 'plan' ? <PlanExcercise /> : <SavedExcercise />}
+            
+            
 <div className="tabs tabs-lift">
-  <input type="radio" name="my_tabs_2" className="tab" aria-label='Today&apos;s Plan'/>
+  <input type="radio" name="my_tabs_2" className="tab" aria-label='Today&apos;s Plan'
+  checked={activeTab === 'plan'}
+onChange={() => setActiveTab('plan')}/>
   <div className="tab-content border-base-300 bg-base-300 p-10">
     {
         planLibrary.length>0?(
@@ -41,7 +45,9 @@ console.log(planLibrary)
     }
     </div>
 
-  <input type="radio" name="my_tabs_2" className="tab" aria-label="Saved" defaultChecked />
+  <input type="radio" name="my_tabs_2" className="tab" aria-label="Saved" 
+ checked={activeTab === 'saved'}
+onChange={() => setActiveTab('saved')}/>
   <div className="tab-content border-base-300 bg-base-300 p-10">
 
      {

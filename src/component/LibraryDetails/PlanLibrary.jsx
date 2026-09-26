@@ -5,13 +5,11 @@ import { useContext } from "react";
 import { toast } from "react-toastify";
 
 const PlanLibrary = ({ library })=> {
-  const { planLibrary,setPlanLibrary} = useContext(LibraryContext);
+  const { planLibrary,setPlanLibrary, selectedExercises, setSelectedExercises} = useContext(LibraryContext);
   
 
   const handlePlanLibrary = () => {
-    console.log("read book btn triggered", library);
-
-    // setReadBooks((prevReadBooks) => [...prevReadBooks, book]);
+    setSelectedExercises([...selectedExercises,library])
     setPlanLibrary([...planLibrary, library]);
     toast.success(` "${library.name} is added to plan"`);
   };

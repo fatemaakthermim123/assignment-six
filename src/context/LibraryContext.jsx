@@ -6,22 +6,35 @@ import { createContext, useState } from "react";
 const LibraryProvider = ({children}) => {
     const [planLibrary,setPlanLibrary]=useState([]);
     const [savedLibrary,setSavedLibrary]=useState([]);
+    const [selectedExercises, setSelectedExercises] = useState([]);
+    const [selectedExercisesTwo,setSelectedExercisesTwo]=useState([]);
+   
     const removeFromPlan = (id) => {
+
     setPlanLibrary((library) => library.filter((item) => item.id !== id));
+    setSelectedExercises(selectedExercises.filter(item => item.id !== id));
 };
 
     const removeFromSaved = (id) => {
-    setSavedLibrary((library) => library.filter((item) => item.id !== id))
+    setSavedLibrary((library) => library.filter((item) => item.id !== id));
+     setSelectedExercisesTwo(selectedExercisesTwo.filter(item => item.id !==id));
     ;}
   
 
+   
     const sharedData={
         planLibrary,
         setPlanLibrary,
         savedLibrary,
         setSavedLibrary,
         removeFromPlan,
-        removeFromSaved
+        removeFromSaved,
+        selectedExercises,
+        setSelectedExercises,
+        selectedExercisesTwo,
+        setSelectedExercisesTwo,
+       
+       
         
         
     }
