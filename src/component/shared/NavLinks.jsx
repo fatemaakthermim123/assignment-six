@@ -16,7 +16,7 @@ const NavLinks = () => {
         href="/"
         onClick={() => handleActive("workout")}
         className={
-          active === "workout" ? "text-[#ccff00] border border-[#C2F800] rounded-full py-2.5 px-5":
+          active === "workout" ? "text-[#ccff00]  border border-[#C2F800] rounded-full py-2.5 px-5":
           "text-[#9CA3AF]"
         }
       >
@@ -27,7 +27,7 @@ const NavLinks = () => {
         href="/MyPlan"
         onClick={() => handleActive("my-plan")}
         className={
-          active === "my-plan" ? "text-[#ccff00] border border-[#C2F800] rounded-full  py-2.5 px-5": 
+          active === "my-plan" ? "text-[#ccff00] border  border-[#C2F800] rounded-full  py-2.5 px-5": 
           "text-[#9CA3AF]"
            
         }

@@ -3,6 +3,7 @@ import React from 'react';
 import NavLinks from './NavLinks';
 import Image from 'next/image';
 import navLogo from '@/assets/logo.png'
+import NavBadge from './NavBadge';
 const Navbar = () => {
   
     return (
@@ -29,12 +30,7 @@ const Navbar = () => {
     {<NavLinks/>}
     </ul>
   </div>
-  <div className="navbar-end flex gap-4">
-    <Link href='/MyPlan'>
-<button className="btn btn-active btn-accent bg-[#ccff00] border rounded-full">Plan</button>
-    <button className="btn border rounded-full">Saved</button>
-    </Link>
-  </div>
+ <NavBadge></NavBadge>
 </div>
 </nav>
     );

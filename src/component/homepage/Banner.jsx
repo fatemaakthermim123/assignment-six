@@ -1,6 +1,7 @@
 import React from 'react';
 import heroLogo from '@/assets/banner.png'
 import Image from 'next/image';
+import Link from 'next/link';
 const Banner = () => {
     
   return (
@@ -26,9 +27,11 @@ const Banner = () => {
               add up.
             </p>
 
+            
             <button className="mt-6 rounded-md bg-[#ccff00] px-5 py-3 text-xs font-bold text-black transition hover:bg-lime-300 sm:px-6 sm:text-sm">
               BROWSE WORKOUTS
             </button>
+            
 
           </div>
 
