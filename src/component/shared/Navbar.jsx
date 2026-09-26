@@ -30,8 +30,10 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end flex gap-4">
+    <Link href='/MyPlan'>
 <button className="btn btn-active btn-accent bg-[#ccff00] border rounded-full">Plan</button>
     <button className="btn border rounded-full">Saved</button>
+    </Link>
   </div>
 </div>
 </nav>

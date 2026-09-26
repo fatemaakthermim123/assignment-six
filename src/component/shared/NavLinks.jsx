@@ -24,7 +24,7 @@ const NavLinks = () => {
       </Link>
 
       <Link
-        href="/my-plan"
+        href="/MyPlan"
         onClick={() => handleActive("my-plan")}
         className={
           active === "my-plan" ? "text-[#ccff00] border border-[#C2F800] rounded-full  py-2.5 px-5": 

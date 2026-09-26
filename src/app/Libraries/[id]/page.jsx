@@ -1,5 +1,7 @@
 
 
+import PlanLibrary from '@/component/LibraryDetails/PlanLibrary';
+import SavedLibrary from '@/component/LibraryDetails/SavedLibrary';
 import Image from 'next/image';
 import React from 'react';
 
@@ -41,17 +43,7 @@ const librariesDataDetails = async ({ params }) => {
 
         {/* Content */}
         <div>
-          {/* Muscle Group Tags */}
-          <div className="flex gap-2 mb-4">
-            {library.muscleGroups.map((muscle) => (
-              <span
-                key={muscle}
-                className="rounded-full bg-[#ccffee] px-4 py-1 text-xs font-semibold text-black"
-              >
-                {muscle}
-              </span>
-            ))}
-          </div>
+        
 
           {/* Title */}
           <h1 className="text-4xl font-extrabold mb-3">
@@ -60,7 +52,18 @@ const librariesDataDetails = async ({ params }) => {
 
           {/* Description */}
           <p className="text-slate-300 mb-6">{library.description}</p>
-
+           
+             {/* Muscle Group Tags */}
+          <div className="flex gap-2 mb-4">
+            {library.muscleGroups.map((muscle) => (
+              <span
+                key={muscle}
+                className="rounded-full bg-[#ccff00] px-4 py-1 text-xs font-semibold text-black"
+              >
+                {muscle}
+              </span>
+            ))}
+          </div>
           {/* Stats */}
           <div className="space-y-3 mb-6 text-sm">
             <div className="flex justify-between border-b border-slate-700 pb-2">
@@ -71,11 +74,7 @@ const librariesDataDetails = async ({ params }) => {
               <span className="text-slate-400">DIFFICULTY</span>
               <span className="font-semibold">{library.difficulty}</span>
             </div>
-            <div className="flex justify-between border-b border-slate-700 pb-2">
-              <span className="text-slate-400">DURATION</span>
-              <span className="font-semibold">{library.duration} min</span>
-            </div>
-            <div className="flex justify-between border-b border-slate-700 pb-2">
+             <div className="flex justify-between border-b border-slate-700 pb-2">
               <span className="text-slate-400">SETS</span>
               <span className="font-semibold">{library.sets}</span>
             </div>
@@ -83,6 +82,11 @@ const librariesDataDetails = async ({ params }) => {
               <span className="text-slate-400">REPS</span>
               <span className="font-semibold">{library.reps}</span>
             </div>
+            <div className="flex justify-between border-b border-slate-700 pb-2">
+              <span className="text-slate-400">DURATION</span>
+              <span className="font-semibold">{library.duration} min</span>
+            </div>
+           
             <div className="flex justify-between border-b border-slate-700 pb-2">
               <span className="text-slate-400">CALORIES</span>
               <span className="font-semibold">{library.caloriesBurned} kcal</span>
@@ -103,12 +107,8 @@ const librariesDataDetails = async ({ params }) => {
 
           {/* Buttons */}
           <div className="flex gap-3">
-            <button className="bg-[#ccff00] text-black  btn-accent font-semibold px-5 py-2 rounded-full">
-              Add to today&apos;s plan
-            </button>
-            <button className="border border-slate-500 text-white font-semibold px-5 py-2 rounded-full ">
-              Save for later
-            </button>
+            <PlanLibrary library={library} ></PlanLibrary>
+           <SavedLibrary library={library}></SavedLibrary>
           </div>
         </div>
       </div>
